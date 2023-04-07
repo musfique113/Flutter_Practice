@@ -14,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       children: [Image.asset("images/Github.png")],
     );
-  }
+  } // comment form linux
 
 // this is for logo
   @override
