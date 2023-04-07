@@ -12,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   Widget buildTopPart() {
     return Column(
-      children: [Image.asset("images/Github.png")],
+      children: [Image.asset("images/Logo.png")],
     );
   } 
 
