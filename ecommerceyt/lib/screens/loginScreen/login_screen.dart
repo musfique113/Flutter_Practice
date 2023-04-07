@@ -12,10 +12,11 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   Widget buildTopPart() {
     return Column(
-      children: [Image.asset("images/Logo.png")],
+      children: [Image.asset("images/Github.png")],
     );
   }
-// this is for logo 
+
+// this is for logo
   @override
   Widget build(BuildContext context) {
     return Scaffold(
