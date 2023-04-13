@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../widgets/MyTextFromField.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -12,7 +14,21 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   Widget buildTopPart() {
     return Column(
-      children: [Image.asset("images/Logo.png")],
+      children: [Image.asset("images/Logo.png",
+      height: 150,
+      ),
+      Column(
+        children: [
+          MyTextFromField(
+            hintText: "Email",
+            obscureText: false,
+          ),
+          MyTextFromField(
+            hintText: "Password",
+            obscureText: true,
+          ),
+        ],
+      )],
     );
   } 
 
