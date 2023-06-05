@@ -1,7 +1,5 @@
 # module_five_assignment
 
-## Flutter Beginning
-
 Create a Flutter app with three pages arranged in a tab view screen. Each page will have a different colored floating action button and a centered text widget displaying the page number.
 
 Requirements:
