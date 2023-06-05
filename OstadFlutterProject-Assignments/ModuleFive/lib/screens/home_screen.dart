@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../live_test/live_test.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -99,7 +101,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LiveTest()));
+          },
         backgroundColor: fabColor,
         child: Icon(Icons.add),
       ),
