@@ -101,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: fabColor,
+        child: Icon(Icons.add),
       ),
     );
   }

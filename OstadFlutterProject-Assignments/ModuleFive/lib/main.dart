@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_five_assignment/live_test/live_test.dart';
 import 'package:module_five_assignment/screens/home_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Module 5 Assignment ',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: MyHomePage(),
     );
