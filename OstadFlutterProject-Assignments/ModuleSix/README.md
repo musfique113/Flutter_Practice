@@ -25,3 +25,7 @@
 <img src="https://github.com/musfique113/Flutter_Practice/assets/53111065/5c4617d4-e4cd-448d-8f05-7ae04050bf75" alt="Screenshot 3" height="400" width="200"> <img src="https://github.com/musfique113/Flutter_Practice/assets/53111065/8ce4bfb3-bc4f-4933-98d9-b0c0d41e482f" alt="Screenshot 4" height="400" width="200">
 
 <img src="https://github.com/musfique113/Flutter_Practice/assets/53111065/18e7da61-f8ae-4650-b0a7-d289afd72d5f" alt="Screenshot 5" height="400" width="200">
+
+## **Demo**
+
+<img src="https://github.com/musfique113/Flutter_Practice/blob/master/OstadFlutterProject-Assignments/ModuleSix/gifs/module%20six.gif?raw=true" alt="demo" height="400" width="200">
