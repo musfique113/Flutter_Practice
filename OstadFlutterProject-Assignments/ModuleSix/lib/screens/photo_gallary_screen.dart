@@ -28,15 +28,15 @@ class PhotoGalleryScreen extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Search for photos',
-                  border: OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red)
-                  )
-                ),
+                    hintText: 'Search for photos',
+                    border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red))),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Center(
               child: Wrap(
                 spacing: 8,
@@ -68,7 +68,9 @@ class PhotoGalleryScreen extends StatelessWidget {
                 }),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             ListView(
               shrinkWrap: true,
               children: [
@@ -78,8 +80,10 @@ class PhotoGalleryScreen extends StatelessWidget {
                   itemCount: 3,
                   itemBuilder: (context, index) {
                     return ListTile(
-                      leading: Image.network('https://64.media.tumblr.com/f1ab4a3e52dd7aa76847c37ea39311da/4c684219b016b58e-95/s400x600/86b0d442017843887c47dc462f754f7e10d9256d.png',
-                      fit: BoxFit.fitHeight,),
+                      leading: Image.network(
+                        'https://64.media.tumblr.com/f1ab4a3e52dd7aa76847c37ea39311da/4c684219b016b58e-95/s400x600/86b0d442017843887c47dc462f754f7e10d9256d.png',
+                        fit: BoxFit.fitHeight,
+                      ),
                       title: Text('Photo Title $index'),
                       subtitle: Text('Photo Subtitle $index'),
                     );
@@ -91,9 +95,11 @@ class PhotoGalleryScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: IconButton(
-        icon: Icon(Icons.cloud_upload,
-        color: Colors.redAccent,
-        size:35 ,),
+        icon: Icon(
+          Icons.cloud_upload,
+          color: Colors.redAccent,
+          size: 35,
+        ),
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -101,46 +107,6 @@ class PhotoGalleryScreen extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildPhotoButton(
-      BuildContext context, String imageUrl, String caption) {
-    return ElevatedButton(
-      onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Clicked on photo!'),
-          ),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.network(
-            imageUrl,
-            height: 120.0,
-            fit: BoxFit.cover,
-          ),
-          Container(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              caption,
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
       ),
     );
   }
