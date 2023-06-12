@@ -8,11 +8,11 @@ class ShoppingListPage extends StatefulWidget {
 
 class _ShoppingListPageState extends State<ShoppingListPage> {
   final List<String> shoppingItems = [
+    'Apples',
+    'Bananas',
+    'Bread',
     'Milk',
     'Eggs',
-    'Bread',
-    'Butter',
-    'Cheese',
   ];
 
   void _showSnackbar(BuildContext context) {
@@ -25,6 +25,7 @@ class _ShoppingListPageState extends State<ShoppingListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Shopping List'),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -38,7 +39,7 @@ class _ShoppingListPageState extends State<ShoppingListPage> {
           itemCount: shoppingItems.length,
           itemBuilder: (context, index) {
             return ListTile(
-              leading: Icon(Icons.shopping_bag),
+              leading: Icon(Icons.shopping_basket),
               title: Text(shoppingItems[index]),
             );
           },
