@@ -24,7 +24,7 @@ class _ShoppingListPageState extends State<ShoppingListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Shopping List'),
+        title: Text('My Shopping List',),
         centerTitle: true,
         actions: [
           IconButton(
@@ -34,7 +34,7 @@ class _ShoppingListPageState extends State<ShoppingListPage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(9.0),
         child: ListView.builder(
           itemCount: shoppingItems.length,
           itemBuilder: (context, index) {
