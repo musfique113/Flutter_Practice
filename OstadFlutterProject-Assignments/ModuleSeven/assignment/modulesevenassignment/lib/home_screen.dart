@@ -19,7 +19,12 @@ class _ProductListState extends State<ProductList> {
     Product(name: 'Apple', price: 10.0),
     Product(name: 'Lime', price: 20.0),
     Product(name: 'Strawberry', price: 30.0),
+    Product(name: 'Banana', price: 15.0),
+    Product(name: 'Orange', price: 25.0),
+    Product(name: 'Grape', price: 12.0),
+    Product(name: 'Watermelon', price: 40.0),
   ];
+
 
   int totalProducts = 0;
 
