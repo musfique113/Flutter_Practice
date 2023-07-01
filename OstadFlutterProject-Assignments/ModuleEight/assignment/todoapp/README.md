@@ -1,6 +1,7 @@
 # todoapp
 
-A new Flutter project.
+A task management app where user can create task,delete task and update task.
+
 <details>
 <summary> Questions </summary>
 
