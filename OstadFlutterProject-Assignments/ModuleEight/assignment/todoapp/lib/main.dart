@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 void main() {
-  runApp(TaskManagementApp());
+  runApp(App());
 }
 
-class TaskManagementApp extends StatelessWidget {
+class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,

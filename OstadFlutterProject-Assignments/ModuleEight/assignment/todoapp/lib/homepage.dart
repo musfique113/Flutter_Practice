@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class Task {
   String title;
   String description;
-  DateTime deadline;
+  String deadline;
 
-  Task({required this.title, required this.description, required this.deadline});
+  Task(
+      {required this.title, required this.description, required this.deadline});
 }
 
 class TaskListScreen extends StatefulWidget {
@@ -26,6 +27,80 @@ class _TaskListScreenState extends State<TaskListScreen> {
     setState(() {
       tasks.remove(task);
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Task Management'),
+      ),
+      body: ListView.builder(
+        itemCount: tasks.length,
+        itemBuilder: (BuildContext context, int index) {
+          Task task = tasks[index];
+          return ListTile(
+            title: Text(task.title),
+            subtitle: Text(task.description),
+            onLongPress: () => openTaskDetails(task),
+            //onTap: () => openTaskDetails(task),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              String title = '';
+              String description = '';
+              String deadLine = '';
+              return AlertDialog(
+                title: Text('Add Task'),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    TextField(
+                      onChanged: (value) {
+                        title = value;
+                      },
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      onChanged: (value) {
+                        description = value;
+                      },
+                      decoration: InputDecoration(labelText: 'Description'),
+                    ),
+                    TextField(
+                      onChanged: (value) {
+                        deadLine = value;
+                      },
+                      decoration: InputDecoration(labelText: 'Deadline'),
+                    ),
+                  ],
+                ),
+                actions: [
+                  TextButton(
+                    child: Text('Save'),
+                    onPressed: () {
+                      Task newTask = Task(
+                        title: title,
+                        description: description,
+                        deadline: deadLine ,
+                      );
+                      addTask(newTask);
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        },
+        child: Icon(Icons.add),
+      ),
+    );
   }
 
   void openTaskDetails(Task task) {
@@ -56,7 +131,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                 title: Text('Description: ${task.description}'),
               ),
               ListTile(
-                title: Text('Deadline: ${task.deadline.toString()}'),
+                title: Text('Deadline: ${task.deadline}'),
               ),
               ListTile(
                 leading: Icon(Icons.delete),
@@ -70,83 +145,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
           ),
         );
       },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Task Management'),
-      ),
-      body: ListView.builder(
-        itemCount: tasks.length,
-        itemBuilder: (BuildContext context, int index) {
-          Task task = tasks[index];
-          return ListTile(
-            title: Text(task.title),
-            subtitle: Text(task.description),
-            onTap: () => openTaskDetails(task),
-          );
-        },
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              String title = '';
-              String description = '';
-              DateTime? deadline;
-
-              return AlertDialog(
-                title: Text('Add Task'),
-                content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    TextField(
-                      onChanged: (value) {
-                        title = value;
-                      },
-                      decoration: InputDecoration(labelText: 'Title'),
-                    ),
-                    TextField(
-                      onChanged: (value) {
-                        description = value;
-                      },
-                      decoration: InputDecoration(labelText: 'Description'),
-                    ),
-                    TextField(
-                      onChanged: (value) {
-                        // You can use a date picker here to select the deadline
-                        // For simplicity, we'll use a text field for input
-                        deadline = DateTime.tryParse(value);
-                      },
-                      decoration: InputDecoration(labelText: 'Deadline'),
-                    ),
-                  ],
-                ),
-                actions: [
-                  TextButton(
-                    child: Text('Save'),
-                    onPressed: () {
-                      Task newTask = Task(
-                        title: title,
-                        description: description,
-                        deadline: deadline ?? DateTime.now(),
-                      );
-                      addTask(newTask);
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
-              );
-            },
-          );
-        },
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
