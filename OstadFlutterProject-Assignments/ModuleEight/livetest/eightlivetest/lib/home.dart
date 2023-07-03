@@ -39,19 +39,36 @@ class ContactList extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 builder: (context) {
-                  return Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    width: MediaQuery.of(context).size.height * 0.5,
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children:[
-                        Text('Contact Details',style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10,),
-                        Text('Name: ${contacts[index].name}',style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                        Text('Email: ${contacts[index].email}',style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                        Text('Phone: ${contacts[index].phoneNumber}',style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                      ],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context); // Close the bottom sheet
+                    },
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.5,
+                      width: MediaQuery.of(context).size.height * 0.5,
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Contact Details',
+                            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10,),
+                          Text(
+                            'Name: ${contacts[index].name}',
+                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            'Email: ${contacts[index].email}',
+                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            'Phone: ${contacts[index].phoneNumber}',
+                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
