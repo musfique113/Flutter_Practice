@@ -9,6 +9,10 @@
 - You may use a custom font for the temperature and weather description.
 - You can use the OpenWeatherMap API or any free weather API to fetch weather data.
 
+# Till now the location is manually updated in the code , changing the perimeter "q=location"
+``
+https://api.openweathermap.org/data/2.5/weather?q=Boise&appid=API_KEY'
+``
 
 ## ScreenShots
 
