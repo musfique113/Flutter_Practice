@@ -25,7 +25,7 @@ class _WeatherPageState extends State<WeatherPage> {
   Future<void> fetchWeatherData() async {
     try {
       final url =
-          'https://api.openweathermap.org/data/2.5/weather?q=london&appid=0dadc0ec41869d72cab605ebf70d5c96';
+          'https://api.openweathermap.org/data/2.5/weather?q=Boise&appid=0dadc0ec41869d72cab605ebf70d5c96';
 
       final response = await get(Uri.parse(url));
       if (response.statusCode == 200) {
