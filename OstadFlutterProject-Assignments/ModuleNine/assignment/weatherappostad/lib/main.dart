@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:weatherappostad/fullapp.dart';
 
 import 'home_screen.dart';
-
-
 
 void main() {
   runApp(const MyApp());
