@@ -9,10 +9,6 @@
 - You may use a custom font for the temperature and weather description.
 - You can use the OpenWeatherMap API or any free weather API to fetch weather data.
 
-# Till now the location is manually updated in the code , changing the perimeter "q=location"
-``
-https://api.openweathermap.org/data/2.5/weather?q=Boise&appid=API_KEY'
-``
 
 ## ScreenShots
 
@@ -23,3 +19,8 @@ https://api.openweathermap.org/data/2.5/weather?q=Boise&appid=API_KEY'
 <img src="https://github.com/musfique113/Flutter_Practice/assets/53111065/428a247b-6ce0-4ad6-8ef5-5807a0b41a56" alt="kolkata" height="400" width="200">
 
 <img src="https://github.com/musfique113/Flutter_Practice/assets/53111065/86f19d07-3baf-4b74-90c1-e4cba1bde3bd" alt="london" height="400" width="200">
+
+### Till now the location is manually updated in the code , changing the perimeter "q=location"
+``
+https://api.openweathermap.org/data/2.5/weather?q=Boise&appid=API_KEY'
+``
