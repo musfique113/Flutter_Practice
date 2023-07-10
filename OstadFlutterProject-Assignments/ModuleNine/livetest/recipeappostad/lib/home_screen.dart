@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> fetchData() async {
     final jsonString =
-        await rootBundle.loadString('assets/api/recipi-ostasd-modulenine.json');
+        await rootBundle.loadString('recipe-ostad-modulenine.json');
     final jsonData = json.decode(jsonString);
     final recipeList = jsonData['recipes'] as List<dynamic>;
     recipes = recipeList.map((json) => Recipe.fromJson(json)).toList();
