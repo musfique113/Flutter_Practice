@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> fetchData() async {
     final jsonString =
-        await rootBundle.loadString('recipe-ostad-modulenine.json');
+        await rootBundle.loadString('assets/api/recipe-ostad-modulenine.json');
     final jsonData = json.decode(jsonString);
     final recipeList = jsonData['recipes'] as List<dynamic>;
     recipes = recipeList.map((json) => Recipe.fromJson(json)).toList();
@@ -36,17 +36,22 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: recipes != null
           ? ListView.builder(
-              itemCount: recipes.length,
-              itemBuilder: (context, index) {
-                final recipe = recipes[index];
-                return ListTile(
-                  title: Text(recipe.title),
-                  subtitle: Text(recipe.description),
-                  onTap: () {
-                  },
-                );
-              },
-            )
+        itemCount: recipes.length,
+        itemBuilder: (context, index) {
+          final recipe = recipes[index];
+          return ListTile(
+            leading: Padding(
+              padding: EdgeInsets.only(right: 8.0), // Example padding value
+              child: Icon(Icons.fastfood), // Example icon on the left side
+            ),
+            title: Text(recipe.title),
+            subtitle: Text(recipe.description),
+            onTap: () {
+
+            },
+          );
+        },
+      )
           : Center(
               child: CircularProgressIndicator(),
             ),
