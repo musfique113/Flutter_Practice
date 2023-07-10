@@ -36,22 +36,20 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: recipes != null
           ? ListView.builder(
-        itemCount: recipes.length,
-        itemBuilder: (context, index) {
-          final recipe = recipes[index];
-          return ListTile(
-            leading: Padding(
-              padding: EdgeInsets.only(right: 8.0), // Example padding value
-              child: Icon(Icons.fastfood), // Example icon on the left side
-            ),
-            title: Text(recipe.title),
-            subtitle: Text(recipe.description),
-            onTap: () {
-
-            },
-          );
-        },
-      )
+              itemCount: recipes.length,
+              itemBuilder: (context, index) {
+                final recipe = recipes[index];
+                return ListTile(
+                  leading: Padding(
+                    padding: EdgeInsets.only(right: 8.0),
+                    child: Icon(Icons.fastfood),
+                  ),
+                  title: Text(recipe.title),
+                  subtitle: Text(recipe.description),
+                  onTap: () {},
+                );
+              },
+            )
           : Center(
               child: CircularProgressIndicator(),
             ),
