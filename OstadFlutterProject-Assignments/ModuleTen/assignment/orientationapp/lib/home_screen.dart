@@ -83,11 +83,15 @@ class MyHomePage extends StatelessWidget {
     return GridView.count(
       crossAxisCount: 3,
       children: List.generate(9, (index) {
-        return Image.network(
-          'https://avatars.githubusercontent.com/u/53111065?v=4',
-          fit: BoxFit.cover,
+        return Padding(
+          padding: EdgeInsets.all(8.0), // Add spacing around each image
+          child: Image.network(
+            'https://avatars.githubusercontent.com/u/53111065?v=4',
+            fit: BoxFit.cover,
+          ),
         );
       }),
     );
   }
+
 }
